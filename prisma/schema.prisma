@@ -16,3 +16,38 @@ model User {
   name String?
   password String
 }
+
+
+model Cliente {
+  id Int @id @default(autoincrement())
+  codigo String @unique
+  nombre String @unique
+  razonsocial String 
+  credito Int? 
+  limite Int?
+  plazo Int?
+  saldo Int?
+  bloqueado Int?
+}
+
+model Articulo {
+  id Int @id @default(autoincrement())
+  codigo String @unique
+  descripcion String @unique
+  medida String?
+  barra String?
+  equivalente String?
+  grupoUnidad Int?
+  unidadGrupo Float?
+  tipoDescarga Int?
+  combo Int?
+  herencia Int?
+  existencia Int?
+  descuento Float?
+  precio1 Float?
+  precio2 Float?
+  precio3 Float?
+  codiva String
+  piva Int
+}
+
