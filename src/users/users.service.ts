@@ -1,7 +1,6 @@
 import { PrismaService } from "src/prisma.service";
 import { Injectable } from '@nestjs/common';
-import { User } from "./users.model";
-
+import { EditUsersDto } from "./dto/edit-users.dto"
 
 @Injectable()
 export class UsersService {
@@ -11,9 +10,9 @@ export class UsersService {
   //    return 'This action adds a new user';
   //  }
 
-  create(data: User) {
+  create(dto: EditUsersDto) {
     return this.prisma.user.create({
-      data,
+      data: {...dto},
     })
   }
 
@@ -25,10 +24,11 @@ export class UsersService {
     return this.prisma.user.findUnique({ where: { id: Number(id) } });
   }
 
-  update(id: number, data: User) {
+  update(id: number, dto: EditUsersDto) {
     return this.prisma.user.update({
       where: { id: Number(id) },
-      data: { email: data.email, name: data.name, password: data.password }
+      data: {...dto}
+      //{ email: data.email, name: data.name, password: data.password }
     });
   }
 
