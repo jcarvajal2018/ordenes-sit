@@ -18,7 +18,7 @@ export class AuthService {
     //return this.prisma.user.create({data:userObject})
     return this.prisma.user.create({
       data: {
-        name: userObject.name,
+        username: userObject.username,
         email: userObject.email,
         password: userObject.password}})
   }
@@ -32,7 +32,7 @@ export class AuthService {
     const checkPassword = await compare(password, findUser.password)
     if (!checkPassword) throw new HttpException('CLAVE ERRONEA', HttpStatus.FORBIDDEN)
     
-    const payload = {id:findUser.id, name:findUser.name}
+    const payload = {id:findUser.id, name:findUser.username}
     const token = await this.jwtService.sign(payload)
     
     const data = {

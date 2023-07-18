@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsEmail, MinLength, MaxLength} from 'class-validator';
 export class EditUsersDto {
   @IsNotEmpty()
-  name: string;
+  username: string;
 
   @IsEmail()
   email: string;
