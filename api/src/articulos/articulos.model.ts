@@ -2,7 +2,7 @@ import { Prisma } from "@prisma/client";
 
 export class Articulo implements Prisma.ArticuloCreateInput {
   id: number;
-  codigo: string;
+  articulo:string;
   descripcion: string;
   medida: string;
   barra: string;
@@ -17,6 +17,6 @@ export class Articulo implements Prisma.ArticuloCreateInput {
   precio1: number;
   precio2: number;
   precio3: number;
-  codiva: string;
+  codiva: number;
   piva: number
 }

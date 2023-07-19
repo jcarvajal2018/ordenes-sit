@@ -3,6 +3,9 @@ export class EditUsersDto {
   @IsNotEmpty()
   username: string;
 
+  @IsNotEmpty()
+  vendedor: number;
+
   @IsEmail()
   email: string;
 

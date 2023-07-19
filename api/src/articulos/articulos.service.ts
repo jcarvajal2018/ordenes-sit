@@ -29,7 +29,7 @@ export class ArticulosService {
     return this.prisma.articulo.update({
       where: { id: Number(id) },
       data: {
-        codigo: data.codigo, descripcion: data.descripcion, medida: data.medida,
+        articulo: data.articulo, descripcion: data.descripcion, medida: data.medida,
         barra: data.barra, equivalente: data.equivalente, grupoUnidad: data.grupoUnidad, 
         unidadGrupo: data.unidadGrupo, tipoDescarga: data.tipoDescarga, combo: data.combo, 
         herencia: data.herencia, existencia: data.existencia, descuento: data.descuento, 

@@ -28,7 +28,7 @@ export class ClientesService {
     return this.prisma.cliente.update({
       where: { id: Number(id) },
       data: {
-        codigo: data.codigo, nombre: data.nombre,
+        cliente: data.cliente, nombre: data.nombre,
         razonsocial: data.razonsocial, credito: data.credito,
         limite: data.limite, plazo: data.plazo, saldo: data.saldo,
         bloqueado: data.bloqueado
